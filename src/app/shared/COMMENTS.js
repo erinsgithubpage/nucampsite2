@@ -1,5 +1,5 @@
 export const COMMENTS = [
-    {
+   {
         id: 0,
         campsiteId: 0,
         rating: 5,
@@ -160,3 +160,4 @@ export const COMMENTS = [
         date: '2019-02-18T18:12Z'
     }
 ];
+
