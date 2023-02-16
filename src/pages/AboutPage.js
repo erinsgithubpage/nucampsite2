@@ -4,6 +4,7 @@ import SubHeader from '../components/SubHeader';
 const AboutPage = () => {
     return (
         <Container>
+            <SubHeader name="About Us"></SubHeader>
             <Row className='row-content'>
                 <Col sm='6'>
                     <h3>Our Mission</h3>
