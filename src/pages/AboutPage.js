@@ -1,4 +1,5 @@
 import { Col, Row, Container, Card, CardBody, CardHeader } from 'reactstrap';
+import SubHeader from '../components/SubHeader';
 
 const AboutPage = () => {
     return (
