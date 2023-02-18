@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
 
+
 function App() {
   return (
     <div className='App'>
@@ -17,10 +18,11 @@ function App() {
         <Route path='/' element={<HomePage />}/>
         <Route  path='contact' element={<ContactPage />}/>
         <Route  path='directory' element={<CampsitesDirectoryPage />}/>
-        <Route
-          path='directory/:campsiteId'
+        
+        <Route path='directory/:campsiteId'
           element={<CampsiteDetailPage />}
           />
+          
           <Route path='about' element={<AboutPage />}></Route>
       </Routes>
       <Footer />
