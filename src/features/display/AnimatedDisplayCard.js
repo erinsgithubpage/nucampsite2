@@ -1,8 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { useSpring, animated } from 'react-spring';
 
-const DisplayCard = ({ item }) => {
+const AnimatedDisplayCard = ({ item }) => {
     const {image, name, description } = item;
+    const {toggle, setToggle} = useState(false);
+
+    const animatedStyle = useSpring({
+        opacity: toggle ? 1 : 0, 
+        transform: toggle ? 'scale(1,1)' : 'scale(1,0)',
+        config: { duration: 500 }
+    });
+
+    useEffect(() => {
+        setToggle(true);
+    }, []);
     
     return (
         <Card>
@@ -15,4 +27,4 @@ const DisplayCard = ({ item }) => {
     );
 };
 
-export default DisplayCard;
+export default AnimatedDisplayCard;
