@@ -17,13 +17,15 @@ const AnimatedDisplayCard = ({ item }) => {
     }, []);
     
     return (
-        <Card>
-            <CardImg src={image} alt={name} />
-                <CardBody>
-                    <CardTitle>{name}</CardTitle>
-                    <CardText>{description}</CardText>
-                </CardBody>
-        </Card>
+        <animated.div style={animatedStyle}>
+            <Card>
+                <CardImg src={image} alt={name} />
+                    <CardBody>
+                        <CardTitle>{name}</CardTitle>
+                        <CardText>{description}</CardText>
+                    </CardBody>
+            </Card>
+        </animated.div>
     );
 };
 
