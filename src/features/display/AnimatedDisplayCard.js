@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 const DisplayCard = ({ item }) => {
