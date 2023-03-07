@@ -1,29 +1,38 @@
-import { Routes, Route } from 'react-router-dom';
-import ContactPage from './pages/ContactPage';
-import HomePage from './pages/HomePage';
-import './App.css';
-import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
+import "./App.css";
+import CampsitesDirectoryPage from "./pages/CampsitesDirectoryPage";
 //import { CAMPSITES } from './app/shared/CAMPSITES';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CampsiteDetailPage from './pages/CampsiteDetailPage';
-import AboutPage from './pages/AboutPage';
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CampsiteDetailPage from "./pages/CampsiteDetailPage";
+import { fetchCampsites } from "./features/campsites/campsitesSlice";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(
+    () => {
+      dispatch(fetchCampsites());
+    },
+    { dispatch }
+  );
+
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route  path='contact' element={<ContactPage />}/>
-        <Route  path='directory' element={<CampsitesDirectoryPage />}/>
-        
-        <Route path='directory/:campsiteId'
-          element={<CampsiteDetailPage />}
-          />
-          
-          <Route path='about' element={<AboutPage />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="directory" element={<CampsitesDirectoryPage />} />
+
+        <Route path="directory/:campsiteId" element={<CampsiteDetailPage />} />
+
+        <Route path="about" element={<AboutPage />}></Route>
       </Routes>
       <Footer />
     </div>
